@@ -33,6 +33,7 @@
 		60AE801C203D2A2F000111C8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		60AE8023203D2ED6000111C8 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = Pods/OpenCV/opencv2.framework; sourceTree = "<group>"; };
 		60AE8027203D2EF5000111C8 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		60AE8029203D3172000111C8 /* Face.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Face.h; sourceTree = "<group>"; };
 		6851D4FCBA36E4E415726EC0 /* libPods-FaceTrackerSampleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FaceTrackerSampleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -80,6 +81,7 @@
 				60AE8018203D2A2F000111C8 /* LaunchScreen.storyboard */,
 				60AE801B203D2A2F000111C8 /* Info.plist */,
 				60AE801C203D2A2F000111C8 /* main.m */,
+				60AE8029203D3172000111C8 /* Face.h */,
 			);
 			path = FaceTrackerSampleApp;
 			sourceTree = "<group>";
@@ -374,7 +376,7 @@
 				);
 				INFOPLIST_FILE = FaceTrackerSampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jp.chicn.FaceTrackerSampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.chhrshmmr.FaceTrackerSampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -394,7 +396,7 @@
 				);
 				INFOPLIST_FILE = FaceTrackerSampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jp.chicn.FaceTrackerSampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.chhrshmmr.FaceTrackerSampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

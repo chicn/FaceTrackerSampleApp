@@ -21,6 +21,8 @@
 
 #include <iostream>
 
+#include "Face.h"
+
 @interface ViewController ()
 <AVCaptureVideoDataOutputSampleBufferDelegate>
 
@@ -30,10 +32,9 @@
 {
     AVCaptureSession *session;
     dispatch_queue_t faceQueue;
-
     AVSampleBufferDisplayLayer *displayLayer;
-
     NSMutableArray<AVMetadataFaceObject *>* faceObjects;
+    std::vector<Face> faces;
 }
 
 -(void)dealloc {
@@ -110,6 +111,8 @@
 // カメラの出力の生データ
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection
 {
+    faces.clear();
+
     CVImageBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
 
     CVPixelBufferLockBaseAddress(pixelBuffer, kCVPixelBufferLock_ReadOnly);
@@ -127,6 +130,11 @@
     }
 
     CVPixelBufferUnlockBaseAddress(pixelBuffer, kCVPixelBufferLock_ReadOnly);
+
+    // Process
+
+    // Draw
+    [self drawResult:img];
 
     // BGRイメージをRGBの配列に戻してpixel_bufferに戻す
     long location = 0;
@@ -147,5 +155,13 @@
     }
 
     [displayLayer enqueueSampleBuffer:sampleBuffer];
+}
+
+- (void)drawResult:(cv::Mat& )image {
+    for (const auto& face : faces) {
+        cv::rectangle(image, face.rect, cv::Scalar(255));
+        for (int i = 0; i < face.landmarks.size(); ++i)
+            cv::circle(image, face.landmarks[i], 1, cv::Scalar(255, 0, 0));
+    }
 }
 @end
