@@ -17,6 +17,7 @@
 		60AE8026203D2EF0000111C8 /* libPods-FaceTrackerSampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6851D4FCBA36E4E415726EC0 /* libPods-FaceTrackerSampleApp.a */; };
 		60AE8028203D2EF5000111C8 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60AE8027203D2EF5000111C8 /* Accelerate.framework */; };
 		60AE8030203D33A7000111C8 /* FaceAnalyzer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60AE802E203D33A7000111C8 /* FaceAnalyzer.cpp */; };
+		60AE96B6203D38A1000111C8 /* source.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60AE91BF203D389F000111C8 /* source.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		60AE8029203D3172000111C8 /* Face.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Face.h; sourceTree = "<group>"; };
 		60AE802E203D33A7000111C8 /* FaceAnalyzer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FaceAnalyzer.cpp; sourceTree = "<group>"; };
 		60AE802F203D33A7000111C8 /* FaceAnalyzer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FaceAnalyzer.hpp; sourceTree = "<group>"; };
+		60AE91BF203D389F000111C8 /* source.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = source.cpp; sourceTree = "<group>"; };
 		6851D4FCBA36E4E415726EC0 /* libPods-FaceTrackerSampleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FaceTrackerSampleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 				60AE8018203D2A2F000111C8 /* LaunchScreen.storyboard */,
 				60AE801B203D2A2F000111C8 /* Info.plist */,
 				60AE801C203D2A2F000111C8 /* main.m */,
+				60AE8F87203D389F000111C8 /* dlib */,
 				60AE802D203D3358000111C8 /* FaceAnayzer */,
 			);
 			path = FaceTrackerSampleApp;
@@ -97,6 +100,23 @@
 				60AE802F203D33A7000111C8 /* FaceAnalyzer.hpp */,
 			);
 			path = FaceAnayzer;
+			sourceTree = "<group>";
+		};
+		60AE8F87203D389F000111C8 /* dlib */ = {
+			isa = PBXGroup;
+			children = (
+				60AE91BE203D389F000111C8 /* all */,
+			);
+			name = dlib;
+			path = dlib/dlib;
+			sourceTree = "<group>";
+		};
+		60AE91BE203D389F000111C8 /* all */ = {
+			isa = PBXGroup;
+			children = (
+				60AE91BF203D389F000111C8 /* source.cpp */,
+			);
+			path = all;
 			sourceTree = "<group>";
 		};
 		C18FF5A75E1F5EE245F69CDC /* Frameworks */ = {
@@ -244,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60AE8012203D2A2F000111C8 /* ViewController.mm in Sources */,
+				60AE96B6203D38A1000111C8 /* source.cpp in Sources */,
 				60AE801D203D2A2F000111C8 /* main.m in Sources */,
 				60AE8030203D33A7000111C8 /* FaceAnalyzer.cpp in Sources */,
 				60AE800F203D2A2F000111C8 /* AppDelegate.m in Sources */,
@@ -388,6 +409,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/OpenCV",
 				);
+				GCC_PREPROCESSOR_DEFINITIONS = "DLIB_NO_GUI_SUPPORT=1";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -414,6 +436,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/OpenCV",
 				);
+				GCC_PREPROCESSOR_DEFINITIONS = "DLIB_NO_GUI_SUPPORT=1";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
