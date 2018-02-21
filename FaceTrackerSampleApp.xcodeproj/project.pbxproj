@@ -81,9 +81,17 @@
 				60AE8018203D2A2F000111C8 /* LaunchScreen.storyboard */,
 				60AE801B203D2A2F000111C8 /* Info.plist */,
 				60AE801C203D2A2F000111C8 /* main.m */,
-				60AE8029203D3172000111C8 /* Face.h */,
+				60AE802D203D3358000111C8 /* FaceAnayzer */,
 			);
 			path = FaceTrackerSampleApp;
+			sourceTree = "<group>";
+		};
+		60AE802D203D3358000111C8 /* FaceAnayzer */ = {
+			isa = PBXGroup;
+			children = (
+				60AE8029203D3172000111C8 /* Face.h */,
+			);
+			path = FaceAnayzer;
 			sourceTree = "<group>";
 		};
 		C18FF5A75E1F5EE245F69CDC /* Frameworks */ = {
