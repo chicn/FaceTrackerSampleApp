@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		60AE800F203D2A2F000111C8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60AE800E203D2A2F000111C8 /* AppDelegate.m */; };
-		60AE8012203D2A2F000111C8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60AE8011203D2A2F000111C8 /* ViewController.m */; };
+		60AE8012203D2A2F000111C8 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 60AE8011203D2A2F000111C8 /* ViewController.mm */; };
 		60AE8015203D2A2F000111C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60AE8013203D2A2F000111C8 /* Main.storyboard */; };
 		60AE8017203D2A2F000111C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60AE8016203D2A2F000111C8 /* Assets.xcassets */; };
 		60AE801A203D2A2F000111C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60AE8018203D2A2F000111C8 /* LaunchScreen.storyboard */; };
 		60AE801D203D2A2F000111C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60AE801C203D2A2F000111C8 /* main.m */; };
-		A5377306685FF079D312D442 /* libPods-FaceTrackerSampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6851D4FCBA36E4E415726EC0 /* libPods-FaceTrackerSampleApp.a */; };
+		60AE8024203D2ED6000111C8 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60AE8023203D2ED6000111C8 /* opencv2.framework */; };
+		60AE8026203D2EF0000111C8 /* libPods-FaceTrackerSampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6851D4FCBA36E4E415726EC0 /* libPods-FaceTrackerSampleApp.a */; };
+		60AE8028203D2EF5000111C8 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60AE8027203D2EF5000111C8 /* Accelerate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,12 +25,14 @@
 		60AE800D203D2A2F000111C8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		60AE800E203D2A2F000111C8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		60AE8010203D2A2F000111C8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		60AE8011203D2A2F000111C8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		60AE8011203D2A2F000111C8 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		60AE8014203D2A2F000111C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		60AE8016203D2A2F000111C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60AE8019203D2A2F000111C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60AE801B203D2A2F000111C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60AE801C203D2A2F000111C8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		60AE8023203D2ED6000111C8 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = Pods/OpenCV/opencv2.framework; sourceTree = "<group>"; };
+		60AE8027203D2EF5000111C8 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		6851D4FCBA36E4E415726EC0 /* libPods-FaceTrackerSampleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FaceTrackerSampleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -37,7 +41,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5377306685FF079D312D442 /* libPods-FaceTrackerSampleApp.a in Frameworks */,
+				60AE8028203D2EF5000111C8 /* Accelerate.framework in Frameworks */,
+				60AE8026203D2EF0000111C8 /* libPods-FaceTrackerSampleApp.a in Frameworks */,
+				60AE8024203D2ED6000111C8 /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,7 +74,7 @@
 				60AE800D203D2A2F000111C8 /* AppDelegate.h */,
 				60AE800E203D2A2F000111C8 /* AppDelegate.m */,
 				60AE8010203D2A2F000111C8 /* ViewController.h */,
-				60AE8011203D2A2F000111C8 /* ViewController.m */,
+				60AE8011203D2A2F000111C8 /* ViewController.mm */,
 				60AE8013203D2A2F000111C8 /* Main.storyboard */,
 				60AE8016203D2A2F000111C8 /* Assets.xcassets */,
 				60AE8018203D2A2F000111C8 /* LaunchScreen.storyboard */,
@@ -81,6 +87,8 @@
 		C18FF5A75E1F5EE245F69CDC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				60AE8027203D2EF5000111C8 /* Accelerate.framework */,
+				60AE8023203D2ED6000111C8 /* opencv2.framework */,
 				6851D4FCBA36E4E415726EC0 /* libPods-FaceTrackerSampleApp.a */,
 			);
 			name = Frameworks;
@@ -220,7 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60AE8012203D2A2F000111C8 /* ViewController.m in Sources */,
+				60AE8012203D2A2F000111C8 /* ViewController.mm in Sources */,
 				60AE801D203D2A2F000111C8 /* main.m in Sources */,
 				60AE800F203D2A2F000111C8 /* AppDelegate.m in Sources */,
 			);
@@ -359,6 +367,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GDYU937CV9;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/OpenCV",
+				);
 				INFOPLIST_FILE = FaceTrackerSampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.chicn.FaceTrackerSampleApp;
@@ -374,6 +387,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GDYU937CV9;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/OpenCV",
+				);
 				INFOPLIST_FILE = FaceTrackerSampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.chicn.FaceTrackerSampleApp;
