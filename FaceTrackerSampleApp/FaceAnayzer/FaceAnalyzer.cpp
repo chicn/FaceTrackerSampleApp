@@ -99,25 +99,38 @@ void FaceAnalyzer::run(cv::Mat& image, std::vector<Face> faces) {
         faces.push_back(face);
     }
 
-    if (firstLoop) {
-        prevgray = smGrImage.clone();
-        const LandmarkArray& pts = faces[0].landmarks;
-        for (int i = 0; i < pts.size(); ++i)
-            prevTrackPts[i] = pts[i];
-        firstLoop = false;
-    }
+//    if (firstLoop) {
+//        prevgray = smGrImage.clone();
+//        const LandmarkArray& pts = faces[0].landmarks;
+//        for (int i = 0; i < pts.size(); ++i)
+//            prevTrackPts[i] = pts[i];
+//        firstLoop = false;
+//    }
+
+//    if (faces.size() == 1) {
+//        const LandmarkArray& pts = faces[0].landmarks;
+//        for (int i = 0; i < pts.size(); ++i)
+//            kalman_points[i] = pts[i];
+//    }
 
     if (faces.size() == 1) {
+        if (firstLoop) {
+            prevgray = smGrImage.clone();
+            const LandmarkArray& pts = faces[0].landmarks;
+            for (int i = 0; i < pts.size(); ++i)
+                prevTrackPts[i] = pts[i];
+            firstLoop = false;
+        }
+
+
         const LandmarkArray& pts = faces[0].landmarks;
         for (int i = 0; i < pts.size(); ++i)
             kalman_points[i] = pts[i];
-    }
 
-    cv::Mat predictionResult = kf->predict();
-    for (int i = 0; i < LANDMARK_COUNT; ++i)
-        predict_points[i] = cv::Point2f(predictionResult.at<float>(i * 2), predictionResult.at<float>(i * 2 + 1));
+        cv::Mat predictionResult = kf->predict();
+        for (int i = 0; i < LANDMARK_COUNT; ++i)
+            predict_points[i] = cv::Point2f(predictionResult.at<float>(i * 2), predictionResult.at<float>(i * 2 + 1));
 
-    if (faces.size() == 1) {
         gray = smGrImage.clone();
         if (prevgray.data) {
             std::vector<uchar> status;
@@ -129,15 +142,20 @@ void FaceAnalyzer::run(cv::Mat& image, std::vector<Face> faces) {
             if (diff > 1.0) {
                 std::cout << "DLIB" << std::endl;
                 const LandmarkArray& pts = faces[0].landmarks;
-                for (int i = 0; i < pts.size(); ++i)
+                for (int i = 0; i < pts.size(); ++i) {
+                    cv::circle(image, pts[i], 2, cv::Scalar(0, 0, 255), -1);
                     nextTrackPts[i] = pts[i];
+                }
             } else if (diff <= 1.0 && diff > 0.005) {
                 std::cout<< "Optical Flow" << std::endl;
-                // nextTrackPts
+                for (int i = 0; i < nextTrackPts.size(); i++)
+                    cv::circle(image, nextTrackPts[i], 2, cv::Scalar(255, 0, 0), -1);
             } else {
                 std::cout<< "Kalman Filter" << std::endl;
-                for (int i = 0; i < predict_points.size(); ++i)
+                for (int i = 0; i < predict_points.size(); ++i) {
+                    cv::circle(image, predict_points[i], 2, cv::Scalar(0, 255, 0), -1);
                     nextTrackPts[i] = predict_points[i];
+                }
                 redetected = false;
             }
         } else {
@@ -152,9 +170,9 @@ void FaceAnalyzer::run(cv::Mat& image, std::vector<Face> faces) {
     // draw?
     for (const auto& face : faces) {
         cv::rectangle(image, face.rect, cv::Scalar(255));
-        for (int i = 0; i < face.landmarks.size(); ++i)
+//        for (int i = 0; i < face.landmarks.size(); ++i)
             //cv::circle(image, face.landmarks[i], 1, cv::Scalar(255,0,0), -1);
-            cv::circle(image, nextTrackPts[i], 1, cv::Scalar(255,0,0), -1);
+            //cv::circle(image, nextTrackPts[i], 1, cv::Scalar(255,0,0), -1);
     }
 
     // Update Measurement
