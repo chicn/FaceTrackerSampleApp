@@ -8,15 +8,37 @@ FaceAnalyzer::FaceAnalyzer() {
     dlib::deserialize(resourcePath("shape_predictor_68_face_landmarks", "dat")) >> landmarkPredictor;
 }
 
+namespace {
+
+    double calDistanceDiff(std::vector<cv::Point2f> curPoints, std::vector<cv::Point2f> lastPoints) {
+        double variance = 0.0;
+        double sum = 0.0;
+        std::vector<double> diffs;
+        if (curPoints.size() == lastPoints.size()) {
+            for (int i = 0; i < curPoints.size(); i++) {
+                double diff = std::sqrt(std::pow(curPoints[i].x - lastPoints[i].x, 2.0) + std::pow(curPoints[i].y - lastPoints[i].y, 2.0));
+                sum += diff;
+                diffs.push_back(diff);
+            }
+            double mean = sum / diffs.size();
+            for (int i = 0; i < curPoints.size(); i++) {
+                variance += std::pow(diffs[i] - mean, 2);
+            }
+            return variance / diffs.size();
+        }
+        return variance;
+    }
+}
+
 void FaceAnalyzer::run(cv::Mat& image, std::vector<Face> faces) {
     faces.clear();
 
     // resize image
     if (image.empty()) return;
-    cv::Mat image2, image3;
-    cv::resize(image, image2, cv::Size(), SCALE, SCALE, cv::INTER_NEAREST);
-    cv::cvtColor(image2, image3, CV_BGR2GRAY);
-    dlib::cv_image<uint8_t> dImage = dlib::cv_image<uint8_t>(image3);
+    cv::Mat smImage, smGrImage;
+    cv::resize(image, smImage, cv::Size(), SCALE, SCALE, cv::INTER_NEAREST);
+    cv::cvtColor(smImage, smGrImage, CV_BGR2GRAY);
+    dlib::cv_image<uint8_t> dImage = dlib::cv_image<uint8_t>(smGrImage);
 
     // detect face
     std::vector<dlib::rectangle> rects = faceDetector(dImage);
