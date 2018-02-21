@@ -13,9 +13,12 @@
 		60AE8017203D2A2F000111C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60AE8016203D2A2F000111C8 /* Assets.xcassets */; };
 		60AE801A203D2A2F000111C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60AE8018203D2A2F000111C8 /* LaunchScreen.storyboard */; };
 		60AE801D203D2A2F000111C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60AE801C203D2A2F000111C8 /* main.m */; };
+		A5377306685FF079D312D442 /* libPods-FaceTrackerSampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6851D4FCBA36E4E415726EC0 /* libPods-FaceTrackerSampleApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3BDD54D0C52D3946015405ED /* Pods-FaceTrackerSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceTrackerSampleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FaceTrackerSampleApp/Pods-FaceTrackerSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		49D1DEB728E562B6F8568C55 /* Pods-FaceTrackerSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceTrackerSampleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaceTrackerSampleApp/Pods-FaceTrackerSampleApp.release.xcconfig"; sourceTree = "<group>"; };
 		60AE800A203D2A2F000111C8 /* FaceTrackerSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceTrackerSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60AE800D203D2A2F000111C8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		60AE800E203D2A2F000111C8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		60AE8019203D2A2F000111C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60AE801B203D2A2F000111C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60AE801C203D2A2F000111C8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6851D4FCBA36E4E415726EC0 /* libPods-FaceTrackerSampleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FaceTrackerSampleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5377306685FF079D312D442 /* libPods-FaceTrackerSampleApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				60AE800C203D2A2F000111C8 /* FaceTrackerSampleApp */,
 				60AE800B203D2A2F000111C8 /* Products */,
+				DF0C31047A24F29D09A32814 /* Pods */,
+				C18FF5A75E1F5EE245F69CDC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +78,23 @@
 			path = FaceTrackerSampleApp;
 			sourceTree = "<group>";
 		};
+		C18FF5A75E1F5EE245F69CDC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6851D4FCBA36E4E415726EC0 /* libPods-FaceTrackerSampleApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF0C31047A24F29D09A32814 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3BDD54D0C52D3946015405ED /* Pods-FaceTrackerSampleApp.debug.xcconfig */,
+				49D1DEB728E562B6F8568C55 /* Pods-FaceTrackerSampleApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,9 +102,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 60AE8020203D2A2F000111C8 /* Build configuration list for PBXNativeTarget "FaceTrackerSampleApp" */;
 			buildPhases = (
+				37544B801AFC74C6D008CAD9 /* [CP] Check Pods Manifest.lock */,
 				60AE8006203D2A2F000111C8 /* Sources */,
 				60AE8007203D2A2F000111C8 /* Frameworks */,
 				60AE8008203D2A2F000111C8 /* Resources */,
+				F29CC0467C06AFAC90D88CEC /* [CP] Embed Pods Frameworks */,
+				81F44C501E0CF7E1E813FB04 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,6 +163,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		37544B801AFC74C6D008CAD9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FaceTrackerSampleApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81F44C501E0CF7E1E813FB04 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FaceTrackerSampleApp/Pods-FaceTrackerSampleApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F29CC0467C06AFAC90D88CEC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FaceTrackerSampleApp/Pods-FaceTrackerSampleApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		60AE8006203D2A2F000111C8 /* Sources */ = {
@@ -276,6 +354,7 @@
 		};
 		60AE8021203D2A2F000111C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BDD54D0C52D3946015405ED /* Pods-FaceTrackerSampleApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -290,6 +369,7 @@
 		};
 		60AE8022203D2A2F000111C8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49D1DEB728E562B6F8568C55 /* Pods-FaceTrackerSampleApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
