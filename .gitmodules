@@ -1,0 +1,3 @@
+[submodule "FaceTrackerSampleApp/dlib"]
+	path = FaceTrackerSampleApp/dlib
+	url = git@github.com:davisking/dlib.git

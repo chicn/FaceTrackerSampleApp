@@ -388,6 +388,12 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/OpenCV",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/OpenCV\"",
+					"$(SRCROOT)/FaceTrackerSampleApp/dlib",
+				);
 				INFOPLIST_FILE = FaceTrackerSampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.chhrshmmr.FaceTrackerSampleApp;
@@ -407,6 +413,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/OpenCV",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/OpenCV\"",
+					"$(SRCROOT)/FaceTrackerSampleApp/dlib",
 				);
 				INFOPLIST_FILE = FaceTrackerSampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
