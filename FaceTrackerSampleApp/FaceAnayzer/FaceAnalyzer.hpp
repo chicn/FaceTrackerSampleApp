@@ -13,7 +13,7 @@
 class FaceAnalyzer {
 public:
     FaceAnalyzer();
-    void run(const cv::Mat& image, std::vector<Face> faces);
+    void run(cv::Mat& image, std::vector<Face> faces);
 
 private:
     constexpr static float SCALE = 0.5;

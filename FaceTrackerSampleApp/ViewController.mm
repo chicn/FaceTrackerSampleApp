@@ -22,6 +22,7 @@
 #include <iostream>
 
 #include "Face.h"
+#include "FaceAnalyzer.hpp"
 
 @interface ViewController ()
 <AVCaptureVideoDataOutputSampleBufferDelegate>
@@ -35,6 +36,7 @@
     AVSampleBufferDisplayLayer *displayLayer;
     NSMutableArray<AVMetadataFaceObject *>* faceObjects;
     std::vector<Face> faces;
+    FaceAnalyzer faceAnalyzer;
 }
 
 -(void)dealloc {
@@ -132,9 +134,7 @@
     CVPixelBufferUnlockBaseAddress(pixelBuffer, kCVPixelBufferLock_ReadOnly);
 
     // Process
-
-    // Draw
-    [self drawResult:img];
+    faceAnalyzer.run(img, faces);
 
     // BGRイメージをRGBの配列に戻してpixel_bufferに戻す
     long location = 0;
@@ -155,13 +155,5 @@
     }
 
     [displayLayer enqueueSampleBuffer:sampleBuffer];
-}
-
-- (void)drawResult:(cv::Mat& )image {
-    for (const auto& face : faces) {
-        cv::rectangle(image, face.rect, cv::Scalar(255));
-        for (int i = 0; i < face.landmarks.size(); ++i)
-            cv::circle(image, face.landmarks[i], 1, cv::Scalar(255, 0, 0));
-    }
 }
 @end
