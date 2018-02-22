@@ -14,27 +14,16 @@
 class FaceAnalyzer {
 public:
     FaceAnalyzer();
+    void run(cv::Mat image);
     void run(cv::Mat& image, std::vector<Face> faces);
 
 private:
+
     dlib::frontal_face_detector faceDetector;
     dlib::shape_predictor landmarkPredictor;
 
-    std::vector<cv::Point2f> last_object;
-    std::vector<cv::Point2f> kalman_points;
-    std::vector<cv::Point2f> predict_points;
-    bool firstLoop;
-    int count;
-    bool redetected;
-    // Kalman Filter Setup (68 Points Test)
-    std::unique_ptr<cv::KalmanFilter> kf;
-
-    cv::Mat state;
-    cv::Mat processNoise;
-    cv::Mat measurement;
-
-
     // Initialize Optical Flow
+    bool firstLoop;
     cv::Mat prevgray, gray;
     std::vector<cv::Point2f> prevTrackPts;
     std::vector<cv::Point2f> nextTrackPts;

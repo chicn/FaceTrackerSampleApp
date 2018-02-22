@@ -134,7 +134,7 @@
     CVPixelBufferUnlockBaseAddress(pixelBuffer, kCVPixelBufferLock_ReadOnly);
 
     // Process
-    faceAnalyzer.run(img, faces);
+    faceAnalyzer.run(img);
 
     // BGRイメージをRGBの配列に戻してpixel_bufferに戻す
     long location = 0;
