@@ -9,8 +9,9 @@ $ git clone git@github.com:chicn/FaceTrackerSampleApp.git
 $ git submodule init
 $ git submodule update
 
-# get opencv
-$ pod install
+# Install cocoapod & get opencv
+$ bundle install --path=vendor/bundle
+$ bundle exec pod install
 ```
 
 Download dlib model from [here](https://github.com/davisking/dlib-models/blob/master/shape_predictor_68_face_landmarks.dat.bz2) and save and add it somewhere in this project.
