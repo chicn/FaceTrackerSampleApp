@@ -19,7 +19,7 @@
 		60AE8030203D33A7000111C8 /* FaceAnalyzer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60AE802E203D33A7000111C8 /* FaceAnalyzer.cpp */; };
 		60AE96B6203D38A1000111C8 /* source.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60AE91BF203D389F000111C8 /* source.cpp */; };
 		60AE9818203D4573000111C8 /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 60AE9817203D4573000111C8 /* ResourcePath.mm */; };
-		60AE981B203D4638000111C8 /* shape_predictor_68_face_landmarks.dat in Resources */ = {isa = PBXBuildFile; fileRef = 60AE981A203D4638000111C8 /* shape_predictor_68_face_landmarks.dat */; };
+		60FCE21A20FDC86D00FCE613 /* shape_predictor_68_face_landmarks.dat in Resources */ = {isa = PBXBuildFile; fileRef = 60FCE21920FDC86D00FCE613 /* shape_predictor_68_face_landmarks.dat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +43,7 @@
 		60AE91BF203D389F000111C8 /* source.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = source.cpp; sourceTree = "<group>"; };
 		60AE9816203D4573000111C8 /* ResourcePath.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ResourcePath.hpp; sourceTree = "<group>"; };
 		60AE9817203D4573000111C8 /* ResourcePath.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
-		60AE981A203D4638000111C8 /* shape_predictor_68_face_landmarks.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = shape_predictor_68_face_landmarks.dat; sourceTree = "<group>"; };
+		60FCE21920FDC86D00FCE613 /* shape_predictor_68_face_landmarks.dat */ = {isa = PBXFileReference; lastKnownFileType = file; name = shape_predictor_68_face_landmarks.dat; path = "vendor/dlib-model/shape_predictor_68_face_landmarks.dat"; sourceTree = SOURCE_ROOT; };
 		6851D4FCBA36E4E415726EC0 /* libPods-FaceTrackerSampleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FaceTrackerSampleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -91,6 +91,7 @@
 				60AE8018203D2A2F000111C8 /* LaunchScreen.storyboard */,
 				60AE801B203D2A2F000111C8 /* Info.plist */,
 				60AE801C203D2A2F000111C8 /* main.m */,
+				60FCE21920FDC86D00FCE613 /* shape_predictor_68_face_landmarks.dat */,
 				60AE802D203D3358000111C8 /* FaceAnayzer */,
 				60AE9815203D4525000111C8 /* Utility */,
 				60AE8F87203D389F000111C8 /* dlib */,
@@ -111,7 +112,6 @@
 		60AE8F87203D389F000111C8 /* dlib */ = {
 			isa = PBXGroup;
 			children = (
-				60AE9819203D45EB000111C8 /* model */,
 				60AE91BE203D389F000111C8 /* all */,
 			);
 			name = dlib;
@@ -133,14 +133,6 @@
 				60AE9817203D4573000111C8 /* ResourcePath.mm */,
 			);
 			path = Utility;
-			sourceTree = "<group>";
-		};
-		60AE9819203D45EB000111C8 /* model */ = {
-			isa = PBXGroup;
-			children = (
-				60AE981A203D4638000111C8 /* shape_predictor_68_face_landmarks.dat */,
-			);
-			path = model;
 			sourceTree = "<group>";
 		};
 		C18FF5A75E1F5EE245F69CDC /* Frameworks */ = {
@@ -224,7 +216,7 @@
 				60AE801A203D2A2F000111C8 /* LaunchScreen.storyboard in Resources */,
 				60AE8017203D2A2F000111C8 /* Assets.xcassets in Resources */,
 				60AE8015203D2A2F000111C8 /* Main.storyboard in Resources */,
-				60AE981B203D4638000111C8 /* shape_predictor_68_face_landmarks.dat in Resources */,
+				60FCE21A20FDC86D00FCE613 /* shape_predictor_68_face_landmarks.dat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
